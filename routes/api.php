@@ -5,6 +5,11 @@ use App\Http\Controllers\Api\ReservationController;
 use App\Http\Controllers\Api\SubscribersController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
+
+Route::get('/', function () {
+    return 'Hello! from Library App.';
+});
 
 Route::group(['middleware' => 'api', 'as' => 'api.'], function () {
     Route::post('/register', [AuthController::class, 'register'])->name('register');
